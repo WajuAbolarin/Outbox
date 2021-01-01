@@ -30,7 +30,7 @@ export default function BoxBackground({children}) {
              <Footer width="100%" py="1em">
                 <Center w="100%">
                    <Text>
-                      <ChakraLink href="https://waju.dev"> Made with ❤ by Waju</ChakraLink></Text>
+                      Made with ❤ by <ChakraLink rel="noopener" target="_blank" href="https://twitter.com/waju_abolarin"> Waju</ChakraLink></Text>
                 </Center>
              </Footer>
           </Container>

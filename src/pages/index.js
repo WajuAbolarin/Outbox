@@ -16,27 +16,32 @@ import {
 import {QuestionIcon} from '@chakra-ui/icons'
 import BoxBackground from "../components/BoxBackground";
 
+const tip = ` A box corresponds to a
+                        life
+                        event like an Anniversary, birthday or new
+                        month and allows you to collect messages properly`
 const Index = () => (
     <BoxBackground>
 
         <Stack flex="1" px="0" heigth="100%">
-            <Box h={["10%", "15%"]}/>
+            <Box h={["30%","25%"]} mb="6em"/>
             {/*Form*/}
-            <Box display="flex" justifyContent="center" flex="1" bg="blue.50" borderTop="5px solid #BEE3F8">
-                <Box p="1em 0.5em" boxShadow="0px 1px 10px 3px #26272612, 2px -4px 20px 8px #26272600"
-                     height="calc(100% + 8em)" mt="-8em"
-                     background="white" width={["80%", "600px"]} borderRadius="10px">
+            <Box display="flex" alignItems="flex-start" justifyContent="center" flex="1" bg="blue.50" borderTop="5px solid #BEE3F8">
+                <Box py="2em" px="0.5em" boxShadow="0px 1px 10px 3px #26272612, 2px -4px 20px 8px #26272600"
+                      transform={ [ "translateY(-3em)", "translateY(-6em)" ] }
+                     background="gray.50" width={["80%", "600px"]} borderRadius="10px">
                     <Flex align="baseline" justify="center">
-                        <Heading textAlign="center" mr="1em" my="1em" fontSize={['16px', '24px']}>Create a
+                        <Heading textAlign="center" mr="1em" fontSize={['16px', '24px']}>Create a
                             box</Heading>
-                        <Tooltip shouldWrapChildren label="Right start" placement="right-start">
-                            <QuestionIcon/>
-                        </Tooltip>
+
+                        <Box display={["none", "inline-block"]}>
+                            <Tooltip shouldWrapChildren label={tip} placement="right-start">
+                                <QuestionIcon/>
+                            </Tooltip>
+                        </Box>
                     </Flex>
-                    <Text textAlign="center" px="2em" fontSize={["x-small", "small"]}> A box corresponds to a
-                        life
-                        event like an Aniversary, birthday or new
-                        month and allows you to collect messages properly</Text>
+                    <Text display={["inline-block", "none"]} textAlign="center" px="2em"
+                          fontSize={["x-small", "small"]}>{tip}</Text>
 
                     <Stack spacing="1.5rem" fontSize={["12px", "14px"]} as="form"
                            onSubmit={e => e.preventDefault()}

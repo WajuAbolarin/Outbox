@@ -6,7 +6,6 @@ import { Flex, useColorMode } from '@chakra-ui/react'
 export const Container = (props) => {
   const { colorMode } = useColorMode()
 
-
   return (
     <Flex
       direction="column"
