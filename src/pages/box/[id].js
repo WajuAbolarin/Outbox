@@ -10,11 +10,14 @@ import {
     Radio,
     FormControl,
     Button,
-    FormLabel,
+    FormLabel, IconButton,
 
 } from '@chakra-ui/react'
 import {QuestionIcon} from '@chakra-ui/icons'
 import BoxBackground from "../../components/BoxBackground";
+import ColorIcon from "../../components/ColorIcon";
+import FontIcon from "../../components/FontIcon";
+import SendIcon from "../../components/SendIcon";
 
 const Index = () => (
     <BoxBackground>
@@ -23,6 +26,20 @@ const Index = () => (
                 <Heading textAlign="center">
                     My 20th Birthday
                 </Heading>
+                <Box background="transparent" display="flex" justifyContent="center" mt="2em" alignItems="center"  width="100%">
+
+                    <IconButton  onClick={() => {
+                        editorRef.current?.focus?.()
+                        setColorOrder(c => c + 1)
+                    }} aria-label="Change background"
+                                 icon={<ColorIcon/>}/>
+                    <IconButton onClick={() => {
+                        editorRef.current?.focus?.()
+                        setFontOrder(c => c + 1)
+                    }} aria-label="change font" ml="1em"
+                                icon={<FontIcon/>}/>
+                    <IconButton aria-label="send message" ml="1em" icon={<SendIcon/>}/>
+                </Box>
             </Box>
             {/*Form*/}
             <Box display="flex" justifyContent="center" flex="1" bg="blue.50" borderTop="5px solid #BEE3F8">
